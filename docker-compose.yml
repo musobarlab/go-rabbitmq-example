@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+ rabbitmq-node-1:
+  image: rabbitmq:3-management
+  container_name: rabbitmq-node-1
+  hostname: rabbitmq-node-1
+  ports:
+   - "15672:15672"
+  labels:
+    NAME: "rabbitmq-node-1"
+  volumes:
+   - $PWD/storage/rabbitmq-node-1:/var/lib/rabbitmq
+  environment:
+   - RABBITMQ_ERLANG_COOKIE=cluster_cookie
+   - RABBITMQ_DEFAULT_USER=admin
+   - RABBITMQ_DEFAULT_PASS=Admin@123  

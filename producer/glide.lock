@@ -1,0 +1,8 @@
+hash: 94cb5403e884d4f630676d79297b133b90713ed5d8d470b42b0751a02a3c66a3
+updated: 2018-06-25T06:22:29.063737172+07:00
+imports:
+- name: github.com/joho/godotenv
+  version: a79fa1e548e2c689c241d10173efd51e5d689d5b
+- name: github.com/streadway/amqp
+  version: e5adc2ada8b8efff032bf61173a233d143e9318e
+testImports: []

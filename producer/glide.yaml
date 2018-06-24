@@ -1,0 +1,5 @@
+package: github.com/wuriyanto48/go-rabbitmq-example/producer
+import:
+- package: github.com/streadway/amqp
+- package: github.com/joho/godotenv
+  version: v1.2.0
