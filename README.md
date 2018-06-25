@@ -1,13 +1,13 @@
 ## Demo using Job Queue with RabbitMQ and Go
 
 ### Running
-    - Start RabbitMQ with Docker
+ - Start RabbitMQ with Docker
 
         ```shell
         docker-compose up
         ```
 
-    - Start Publisher
+ - Start Publisher
 
         ```shell
         cd producer
@@ -35,7 +35,7 @@
             }'
         ```
 
-    - Start Consumer
+ - Start Consumer
 
         ```shell
         cd producer
