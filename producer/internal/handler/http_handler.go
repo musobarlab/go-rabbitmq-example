@@ -19,7 +19,7 @@ func NewHTTPHandler(q string, publisher pub.Publisher) *HTTPHandler {
 	return &HTTPHandler{q: q, publisher: publisher}
 }
 
-//PublishMessage handler function
+//PublishMessages handler function
 func (h *HTTPHandler) PublishMessages() http.Handler{
 	return http.HandlerFunc(func(res http.ResponseWriter, req *http.Request){
 

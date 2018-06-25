@@ -27,6 +27,8 @@ func main() {
 		os.Exit(2)
 	}
 
+	fmt.Println(rabbitAddress)
+
 	rabbitKey, ok := os.LookupEnv("RABBITMQ_KEY")
 
 	if !ok {
@@ -36,7 +38,7 @@ func main() {
 
 	publisher, err := pub.NewPublisher(rabbitAddress)
 	if err != nil {
-		fmt.Printf("Error %v", err.Error())
+		fmt.Printf("Error create publisher %v", err.Error())
 		os.Exit(2)
 	}
 
