@@ -27,8 +27,6 @@ func main() {
 		os.Exit(2)
 	}
 
-	fmt.Println(rabbitAddress)
-
 	rabbitKey, ok := os.LookupEnv("RABBITMQ_KEY")
 
 	if !ok {
