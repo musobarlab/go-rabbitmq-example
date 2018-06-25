@@ -43,7 +43,7 @@
         go run main.go
         ```
 
-        you'll see message like this
+        you'll see messages like this
         ```shell
         {Wuriyanto {This is Message Hello Rabbit}}
         {Wuriyanto {This is Message 2 Hello Rabbit}}
