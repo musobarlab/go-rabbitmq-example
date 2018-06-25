@@ -18,7 +18,7 @@
         ```
     
         send payload
-        ```shell
+        ```curl
         curl -X POST \
         http://localhost:3000/api/send \
         -H 'cache-control: no-cache' \
