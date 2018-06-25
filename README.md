@@ -3,22 +3,22 @@
 ### Running
 
     - Start RabbitMQ with Docker
-        ```console
+        ```shell
         docker-compose up
         ```
 
     - Start Publisher
-        ```console
+        ```shell
         cd producer
         ```
         and
 
-        ```console
+        ```shell
         go run main.go
         ```
     
         send payload
-        ```console
+        ```shell
         curl -X POST \
         http://localhost:3000/api/send \
         -H 'cache-control: no-cache' \
@@ -34,17 +34,17 @@
         ```
 
     - Start Consumer
-        ```console
+        ```shell
         cd producer
         ```
         and
 
-        ```console
+        ```shell
         go run main.go
         ```
 
         you'll see message like this
-        ```console
+        ```shell
         {Wuriyanto {This is Message Hello Rabbit}}
         {Wuriyanto {This is Message 2 Hello Rabbit}}
         {Wuriyanto {This is Message 3 Hello Rabbit}}
