@@ -54,3 +54,23 @@
     {Wuriyanto {This is Message 3 Hello Rabbit}}
     {Wuriyanto {This is Message 4 Hello Rabbit}}
     ```
+
+### MQTT
+
+Enable `RabbitMQ MQTT PLUGIN`
+
+```shell
+$ docker exec -it df8179e5e561 /bin/bash
+$ rabbitmq-plugins enable rabbitmq_mqtt
+```
+
+Set `exchange` to `amq.topic`
+```go
+ch.Publish("amq.topic", q, false, false, payload)
+```
+
+Subscribe using `Mosquitto` https://mosquitto.org/
+
+```shell
+$ mosquitto_sub -h localhost -t 'wurys/one' -u admin -P Admin123
+```
