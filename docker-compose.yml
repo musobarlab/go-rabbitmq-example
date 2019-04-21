@@ -8,6 +8,7 @@ services:
   ports:
    - "15672:15672"
    - "5672:5672"
+   - "1883:1883"
   labels:
     NAME: "rabbitmq-node-1"
   volumes:
@@ -16,4 +17,4 @@ services:
    - RABBITMQ_ERLANG_COOKIE=cluster_cookie
    - RABBITMQ_DEFAULT_USER=admin
    - RABBITMQ_DEFAULT_PASS=Admin123
-   - RABBITMQ_DEFAULT_VHOST="/"
+   - RABBITMQ_DEFAULT_VHOST=/
