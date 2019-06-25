@@ -1,14 +1,15 @@
 package handler
 
 import (
-	"fmt"
 	"encoding/json"
+	"log"
+
 	"github.com/wuriyanto48/go-rabbitmq-example/consumer/internal/sub"
 )
 
 //WorkerHandler struct
 type WorkerHandler struct {
-	q string
+	q          string
 	subscriber sub.Subscriber
 }
 
@@ -18,7 +19,7 @@ func NewWorkerHandler(q string, subscriber sub.Subscriber) *WorkerHandler {
 }
 
 //Pool function
-func (h *WorkerHandler) Pool(){
+func (h *WorkerHandler) Pool() {
 	messages, close, err := h.subscriber.Subscribe(h.q)
 	if err != nil {
 		panic(err)
@@ -28,14 +29,14 @@ func (h *WorkerHandler) Pool(){
 
 	forever := make(chan bool)
 
-	go func(){
+	go func() {
 		//loop over chan messages
 		for msg := range messages {
 			//receiver message
 			var message sub.Message
 			_ = json.Unmarshal(msg.Body, &message)
 
-			fmt.Println(message)
+			log.Println(message)
 
 			msg.Ack(false)
 		}
