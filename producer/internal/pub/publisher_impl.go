@@ -31,13 +31,15 @@ func (p *PublisherImpl) Publish(q string, message []byte) error {
 
 	defer ch.Close()
 
+	ch.QueueDeclare(q, false, false, false, false, nil)
+
 	payload := amqp.Publishing{
 		DeliveryMode: amqp.Persistent,
 		ContentType:  "application/json",
 		Body:         message,
 	}
 
-	if err := ch.Publish("amq.topic", q, false, false, payload); err != nil {
+	if err := ch.Publish("", q, false, false, payload); err != nil {
 		return fmt.Errorf("[Publish] error %v", err)
 	}
 

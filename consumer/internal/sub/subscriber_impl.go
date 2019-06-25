@@ -34,5 +34,5 @@ func (s *SubscriberImpl) Subscribe(q string) (<-chan amqp.Delivery, func(), erro
 	c, err := ch.Consume(q, "", false, false, false, false, nil)
 
 	// return the created channel
-	return c, func(){ch.Close()}, nil
+	return c, func() { ch.Close() }, nil
 }
